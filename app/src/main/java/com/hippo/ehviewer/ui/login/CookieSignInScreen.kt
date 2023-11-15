@@ -123,7 +123,7 @@ fun CookieSignInScene(windowSizeClass: WindowSizeClass) {
         signInJob = coroutineScope.launchIO {
             runCatching {
                 storeCookie(ipbMemberId, ipbPassHash, igneous)
-                EhEngine.getProfile()
+                // EhEngine.getProfile()
             }.onSuccess {
                 val canEx = withNonCancellableContext { postLogin() }
                 withUIContext { navController.navigate(if (canEx) SELECT_SITE_ROUTE_NAME else FINISH_ROUTE_NAME) }
